@@ -2,15 +2,34 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Daily Puzzle Challenge</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CryptoPuzzles - NFT Collection</title>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Russo+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Daily Puzzle Challenge</h1>
-        <div class="puzzle-container" id="puzzleContainer"></div>
-        <button onclick="location.reload()">New Puzzle</button>
-    </div>
-    <script src="script.js"></script>
+    <div class="background-overlay"></div>
+    
+    <header class="main-header">
+        <h1 class="logo">CryptoPuzzles</h1>
+    </header>
+
+    <main class="content-wrapper">
+        <section class="intro-section">
+            <div class="intro-content">
+                <h2>Collect Digital Puzzle NFTs</h2>
+                <p>Own unique blockchain puzzle pieces and join our evolving crypto art collection!</p>
+            </div>
+        </section>
+
+        <section class="nft-container">
+            <!-- Highlight Mint Integration -->
+            <div data-widget="highlight-mint-page" 
+                 data-mint-collection-id="678bf942a91cda15d1f7f5db"
+                 class="highlight-widget"></div>
+        </section>
+    </main>
+
+    <script type="module" crossorigin="true" src="https://mint.highlight.xyz/assets/embed.js?v=1"></script>
 </body>
 </html>
