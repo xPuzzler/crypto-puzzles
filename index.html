@@ -3,33 +3,143 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CryptoPuzzles - NFT Collection</title>
-    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Russo+One&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <title>Crypto Puzzles NFT Collection</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #000;
+            --text: #fff;
+        }
+
+        body {
+            margin: 0;
+            background: var(--bg);
+            color: var(--text);
+            font-family: 'Press Start 2P', monospace;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Puzzle Background Pattern */
+        body::after {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(to right, rgba(255,255,255,0.1) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255,255,255,0.1) 1px, transparent 1px);
+            background-size: 40px 40px;
+            z-index: -1;
+        }
+
+        .header {
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 3px solid var(--text);
+        }
+
+        .logo {
+            width: 200px;
+            height: 200px;
+            background: var(--bg);
+            border: 3px solid var(--text);
+            clip-path: polygon(0% 15%, 15% 15%, 15% 0%, 85% 0%, 85% 15%, 100% 15%, 100% 85%, 85% 85%, 85% 100%, 15% 100%, 15% 85%, 0% 85%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 15px;
+        }
+
+        .mint-btn {
+            background: var(--bg);
+            color: var(--text);
+            border: 3px solid var(--text);
+            padding: 15px 30px;
+            font-family: inherit;
+            cursor: pointer;
+            transition: all 0.3s;
+            clip-path: polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .mint-btn:hover {
+            background: var(--text);
+            color: var(--bg);
+        }
+
+        .puzzle-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            padding: 50px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .puzzle-piece {
+            border: 3px solid var(--text);
+            padding: 30px;
+            clip-path: polygon(0% 15%, 15% 15%, 15% 0%, 85% 0%, 85% 15%, 100% 15%, 100% 85%, 85% 85%, 85% 100%, 15% 100%, 15% 85%, 0% 85%);
+            min-height: 250px;
+            display: flex;
+            align-items: center;
+        }
+
+        .mint-section {
+            padding: 50px;
+            text-align: center;
+        }
+
+        footer {
+            text-align: center;
+            padding: 50px;
+            border-top: 3px solid var(--text);
+        }
+
+        .here-btn {
+            display: inline-block;
+            margin-left: 10px;
+        }
+    </style>
 </head>
 <body>
-    <div class="background-overlay"></div>
-    
-    <header class="main-header">
-        <h1 class="logo">CryptoPuzzles</h1>
-    </header>
+    <div class="header">
+        <div class="logo">CRYPTO PUZZLES</div>
+        <button class="mint-btn" onclick="scrollToMint()">MINT HERE</button>
+    </div>
 
-    <main class="content-wrapper">
-        <section class="intro-section">
-            <div class="intro-content">
-                <h2>Collect Digital Puzzle NFTs</h2>
-                <p>Own unique blockchain puzzle pieces and join our evolving crypto art collection!</p>
-            </div>
-        </section>
+    <div class="puzzle-grid">
+        <div class="puzzle-piece">Where art, creativity, and endless possibilities collide.</div>
+        <div class="puzzle-piece">Each Puzzle is uniquely crafted with mesmerizing patterns, dynamic color flows, and hypnotic animations.</div>
+        <div class="puzzle-piece">From quantum mandalas to spiral galaxies, from plasma rings to crystalline fractals.</div>
+        <div class="puzzle-piece">Solve the puzzle to unleash living digital art that pulses, flows, and dances with otherworldly energy.</div>
+        <div class="puzzle-piece">More than just a game, it's an ever-evolving canvas where every solution reveals...</div>
+        <div class="puzzle-piece">...a one-of-a-kind animated masterpiece.</div>
+    </div>
 
-        <section class="nft-container">
-            <!-- Highlight Mint Integration -->
-            <div data-widget="highlight-mint-page" 
-                 data-mint-collection-id="678bf942a91cda15d1f7f5db"
-                 class="highlight-widget"></div>
-        </section>
-    </main>
+    <div class="mint-section" id="mintSection">
+        <div data-widget="highlight-mint-page" data-mint-collection-id="678bf942a91cda15d1f7f5db"></div>
+    </div>
+
+    <footer>
+        Become a Puzzler today 
+        <button class="mint-btn here-btn" onclick="scrollToMint()">HERE</button>
+    </footer>
 
     <script type="module" crossorigin="true" src="https://mint.highlight.xyz/assets/embed.js?v=1"></script>
+    <script>
+        function scrollToMint() {
+            document.getElementById('mintSection').scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+    </script>
 </body>
 </html>
